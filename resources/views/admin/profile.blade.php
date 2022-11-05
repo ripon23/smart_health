@@ -25,8 +25,7 @@
               <div class="box-body box-profile">
               <img class="profile-user-img img-responsive img-circle" src="{{ asset(Auth::user()->image) }}" alt="User profile picture"> 
 
-              <h3 class="profile-username text-center">{{ Auth::user()->name }}</h3>
-
+              <h3 class="profile-username text-center">{{ Auth::user()->name }}</h3>              
               <p class="text-muted text-center">{{ Auth::user()->designation }}</p>
               <p class="text-muted text-center">Member since {{ Carbon\Carbon::parse(Auth::user()->created_at)->format('M. Y') }}</p>
             </div>
@@ -99,7 +98,15 @@
                       <input type="text" name="name" class="form-control" id="name" value="{{ Auth::user()->name }}" placeholder="Name"> 
                       </div>
                     </div>  
+
+                    <div class="form-group">
+                      <label for="date_of_birth" class="col-sm-2 control-label">Date of Birth</label>
     
+                      <div class="col-sm-10">
+                      <input type="text" name="date_of_birth" class="form-control" id="date_of_birth" value="{{ Auth::user()->date_of_birth }}" placeholder="YYYY-MM-DD">
+                      </div> 
+                    </div>
+
                     <div class="form-group">
                       <label for="designation" class="col-sm-2 control-label">Designation</label>
     

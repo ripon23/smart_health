@@ -55,6 +55,7 @@ class UsersController extends Controller
 
         $request->validate([
             'name' => 'required|string|max:60',
+            'date_of_birth' => 'nullable|date_format:Y-m-d|before:today',
             'designation' => 'required|string|max:100',
             'education' => 'required|string|max:255',
             'skills' => 'required|string|max:255',
@@ -68,6 +69,7 @@ class UsersController extends Controller
         $User = User::find($userId);    
 
         $User->name = $request->name; 
+        $User->date_of_birth = $request->date_of_birth; 
         $User->designation = $request->designation; 
         $User->education = $request->education; 
         $User->skills = $request->skills; 

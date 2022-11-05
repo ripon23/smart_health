@@ -29,25 +29,31 @@
         <span>Dashboard</span>  
       </a>
     </li>
- 
+    @if(auth()->user()->can('user-read'))
     <li class="{{ (request()->is('users*')) ? 'active' : '' }}">  
       <a href="{{ route('users.index') }}"> 
         <i class="fa fa-users"></i> 
         <span>Users</span>     
       </a>
     </li> 
-    
+    @endif 
+
+    @if(auth()->user()->can('permission-read'))
     <li class="{{ (request()->is('permission.index')) ? 'active' : '' }}">
       <a href="{{ route('permission.index') }}"><i class="fa fa-lock"></i> 
         <span>Permissions</span>  
       </a>
-    </li>    
+    </li> 
+    @endif  
 
+    @if(auth()->user()->can('permission-read'))
     <li class="{{ (request()->is('role.index')) ? 'active' : '' }}">
       <a href="{{ route('role.index') }}"><i class="fa fa-shield"></i> 
         <span>Roles</span>  
       </a>
-    </li>   
+    </li>
+    @endif   
+
 
     <li class="{{ (request()->is('media')) ? 'active' : '' }}">
       <a href="{{ route('media') }}"><i class="fa fa-camera"></i>  
@@ -99,7 +105,9 @@
         </ul> 
     </li> 
 
-    <li class="header">Reports</li>  
+    <li class="header">Reports</li>
+    
+    
   </ul>
   <!-- /.sidebar-menu --> 
 </section>
