@@ -108,7 +108,67 @@
                     </div>
 
                     <div class="form-group">
-                      <label for="designation" class="col-sm-2 control-label">Designation</label>
+                      <label for="gender" class="col-sm-2 control-label">Gender</label>
+    
+                      <div class="col-sm-10">
+                        <div class="form-check form-check-inline" style="display: inline-flex;-webkit-box-align: center; -ms-flex-align: center; align-items: center; padding-left: 0;    margin-right: .75rem;">
+                          <input type="radio" id="male" name="gender" value="male" class="radio-inline" style="margin-right: .3125rem; margin-left: 0;" {{ (Auth::user()->gender=="male")? "checked" : "" }}>
+                          <label for="male">Male</label>
+                        </div>
+
+                        <div class="form-check form-check-inline" style="display: inline-flex;-webkit-box-align: center; -ms-flex-align: center; align-items: center; padding-left: 0;    margin-right: .75rem;">
+                          <input type="radio" id="female" name="gender" value="female" class="radio-inline" style="margin-right: .3125rem; margin-left: 0;" {{ (Auth::user()->gender=="female")? "checked" : "" }}>
+                          <label for="female">Female</label>
+                        </div>
+                        
+                        <div class="form-check form-check-inline" style="display: inline-flex;-webkit-box-align: center; -ms-flex-align: center; align-items: center; padding-left: 0;    margin-right: .75rem;">
+                          <input type="radio" id="others" name="gender" value="others" class="radio-inline" style="margin-right: .3125rem; margin-left: 0;" {{ (Auth::user()->gender=="others")? "checked" : "" }}>
+                          <label for="others">Others</label>
+                        </div>  
+                      </div> 
+
+                    </div>
+                    
+                    <div class="form-group">
+                      <label for="marital_status" class="col-sm-2 control-label">Marital Status</label>
+
+                      <div class="col-sm-10">
+                        <div class="form-check form-check-inline" style="display: inline-flex;-webkit-box-align: center; -ms-flex-align: center; align-items: center; padding-left: 0;    margin-right: .75rem;">
+                          <input type="radio" id="single" name="marital_status" value="single" class="radio-inline" style="margin-right: .3125rem; margin-left: 0;" {{ (Auth::user()->marital_status=="single")? "checked" : "" }}>
+                          <label for="single">Single</label>
+                        </div>
+
+                        <div class="form-check form-check-inline" style="display: inline-flex;-webkit-box-align: center; -ms-flex-align: center; align-items: center; padding-left: 0;    margin-right: .75rem;">
+                          <input type="radio" id="married" name="marital_status" value="married" class="radio-inline" style="margin-right: .3125rem; margin-left: 0;" {{ (Auth::user()->marital_status=="married")? "checked" : "" }}>
+                          <label for="married">Married</label>
+                        </div>
+                        
+                        <div class="form-check form-check-inline" style="display: inline-flex;-webkit-box-align: center; -ms-flex-align: center; align-items: center; padding-left: 0;    margin-right: .75rem;">
+                          <input type="radio" id="divorced" name="marital_status" value="divorced" class="radio-inline" style="margin-right: .3125rem; margin-left: 0;" {{ (Auth::user()->marital_status=="divorced")? "checked" : "" }}>
+                          <label for="divorced">Divorced</label>
+                        </div> 
+                        
+                        <div class="form-check form-check-inline" style="display: inline-flex;-webkit-box-align: center; -ms-flex-align: center; align-items: center; padding-left: 0;    margin-right: .75rem;">
+                          <input type="radio" id="separated" name="marital_status" value="separated" class="radio-inline" style="margin-right: .3125rem; margin-left: 0;" {{ (Auth::user()->marital_status=="separated")? "checked" : "" }}>
+                          <label for="separated">Separated</label>
+                        </div> 
+
+                        <div class="form-check form-check-inline" style="display: inline-flex;-webkit-box-align: center; -ms-flex-align: center; align-items: center; padding-left: 0;    margin-right: .75rem;">
+                          <input type="radio" id="widowed" name="marital_status" value="widowed" class="radio-inline" style="margin-right: .3125rem; margin-left: 0;" {{ (Auth::user()->marital_status=="widowed")? "checked" : "" }}>
+                          <label for="widowed">Widowed</label>
+                        </div> 
+
+                        <div class="form-check form-check-inline" style="display: inline-flex;-webkit-box-align: center; -ms-flex-align: center; align-items: center; padding-left: 0;    margin-right: .75rem;">
+                          <input type="radio" id="partnered" name="marital_status" value="partnered" class="radio-inline" style="margin-right: .3125rem; margin-left: 0;" {{ (Auth::user()->marital_status=="partnered")? "checked" : "" }}>
+                          <label for="partnered">Partnered</label>
+                        </div> 
+                      </div> 
+
+                    </div>
+
+
+                    <div class="form-group">
+                      <label for="designation" class="col-sm-2 control-label">Occupation</label>
     
                       <div class="col-sm-10">
                       <input type="text" name="designation" class="form-control" id="designation" value="{{ Auth::user()->designation }}" placeholder="Designation">
@@ -116,7 +176,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="education" class="col-sm-2 control-label">Education</label>
+                        <label for="education" class="col-sm-2 control-label">Highest Education</label>
       
                         <div class="col-sm-10">
                         <input type="text" name="education" class="form-control" id="education" value="{{ Auth::user()->education }}" placeholder="Education"> 
@@ -124,8 +184,70 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="image" class="col-sm-2 control-label">Profile Picture</label>
-      
+                      <label for="marital_status" class="col-sm-2 control-label">Race</label>
+
+                      <div class="col-sm-10">
+                        <div class="form-check form-check-inline" style="display: inline-flex;-webkit-box-align: center; -ms-flex-align: center; align-items: center; padding-left: 0;    margin-right: .75rem;">
+                          <input type="radio" id="christianity" name="race" value="christianity" class="radio-inline" style="margin-right: .3125rem; margin-left: 0;" {{ (Auth::user()->race=="christianity")? "checked" : "" }}>
+                          <label for="christianity">Christianity</label>
+                        </div>
+
+                        <div class="form-check form-check-inline" style="display: inline-flex;-webkit-box-align: center; -ms-flex-align: center; align-items: center; padding-left: 0;    margin-right: .75rem;">
+                          <input type="radio" id="islam" name="race" value="islam" class="radio-inline" style="margin-right: .3125rem; margin-left: 0;" {{ (Auth::user()->race=="islam")? "checked" : "" }}>
+                          <label for="islam">Islam</label>
+                        </div>
+                        
+                        <div class="form-check form-check-inline" style="display: inline-flex;-webkit-box-align: center; -ms-flex-align: center; align-items: center; padding-left: 0;    margin-right: .75rem;">
+                          <input type="radio" id="buddhism" name="race" value="buddhism" class="radio-inline" style="margin-right: .3125rem; margin-left: 0;" {{ (Auth::user()->race=="buddhism")? "checked" : "" }}>
+                          <label for="buddhism">Buddhism</label>
+                        </div> 
+                        
+                        <div class="form-check form-check-inline" style="display: inline-flex;-webkit-box-align: center; -ms-flex-align: center; align-items: center; padding-left: 0;    margin-right: .75rem;">
+                          <input type="radio" id="hinduism" name="race" value="hinduism" class="radio-inline" style="margin-right: .3125rem; margin-left: 0;" {{ (Auth::user()->race=="hinduism")? "checked" : "" }}>
+                          <label for="hinduism">Hinduism</label>
+                        </div> 
+
+                        <div class="form-check form-check-inline" style="display: inline-flex;-webkit-box-align: center; -ms-flex-align: center; align-items: center; padding-left: 0;    margin-right: .75rem;">
+                          <input type="radio" id="judaism" name="race" value="judaism" class="radio-inline" style="margin-right: .3125rem; margin-left: 0;" {{ (Auth::user()->race=="judaism")? "checked" : "" }}>
+                          <label for="judaism">Judaism</label>
+                        </div> 
+
+                        <div class="form-check form-check-inline" style="display: inline-flex;-webkit-box-align: center; -ms-flex-align: center; align-items: center; padding-left: 0;    margin-right: .75rem;">
+                          <input type="radio" id="others" name="race" value="others" class="radio-inline" style="margin-right: .3125rem; margin-left: 0;" {{ (Auth::user()->race=="others")? "checked" : "" }}>
+                          <label for="others">Others</label>
+                        </div> 
+
+                        <div class="form-check form-check-inline" style="display: inline-flex;-webkit-box-align: center; -ms-flex-align: center; align-items: center; padding-left: 0;    margin-right: .75rem;">
+                          <input type="radio" id="non-beliver" name="race" value="non-beliver" class="radio-inline" style="margin-right: .3125rem; margin-left: 0;" {{ (Auth::user()->race=="non-beliver")? "checked" : "" }}>
+                          <label for="non-beliver">Non beliver</label>
+                        </div>
+                      </div> 
+
+                    </div>
+
+                    <div class="form-group">
+                      <label for="hobbies" class="col-sm-2 control-label">Hobbies</label>    
+                      <div class="col-sm-10">
+                      <input type="text" name="hobbies" class="form-control" id="hobbies" value="{{ Auth::user()->hobbies }}" placeholder="Hobbies">
+                      </div> 
+                    </div>                    
+                    
+                    <div class="form-group">
+                      <label for="born_raised" class="col-sm-2 control-label">Born & raised</label>    
+                      <div class="col-sm-10">
+                      <input type="text" name="born_raised" class="form-control" id="born_raised" value="{{ Auth::user()->born_raised }}" placeholder="Born & raised">
+                      </div> 
+                    </div>
+                    
+                    <div class="form-group">
+                      <label for="born_raised" class="col-sm-2 control-label">Currently Living</label>
+                      <div class="col-sm-10">
+                      <input type="text" name="currently_living" class="form-control" id="currently_living" value="{{ Auth::user()->currently_living }}" placeholder="Currently Living">
+                      </div> 
+                    </div>
+
+                    <div class="form-group">
+                        <label for="image" class="col-sm-2 control-label">Profile Picture</label>      
                         <div class="col-sm-10">
                         <input type="file" name="image" class="form-control-file" id="image"> 
                         </div> 

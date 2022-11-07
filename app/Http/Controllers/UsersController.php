@@ -56,6 +56,12 @@ class UsersController extends Controller
         $request->validate([
             'name' => 'required|string|max:60',
             'date_of_birth' => 'nullable|date_format:Y-m-d|before:today',
+            'gender' => 'nullable|string',
+            'marital_status'=> 'nullable|string',
+            'race'=> 'nullable|string',
+            'hobbies'=> 'nullable|string',
+            'born_raised'=> 'nullable|string',
+            'currently_living'=> 'nullable|string',
             'designation' => 'required|string|max:100',
             'education' => 'required|string|max:255',
             'skills' => 'required|string|max:255',
@@ -70,6 +76,13 @@ class UsersController extends Controller
 
         $User->name = $request->name; 
         $User->date_of_birth = $request->date_of_birth; 
+        $User->gender = $request->gender; 
+        $User->marital_status = $request->marital_status;
+        $User->race = $request->race;
+        $User->hobbies = $request->hobbies;
+        $User->born_raised = $request->born_raised;
+        $User->currently_living = $request->currently_living;
+
         $User->designation = $request->designation; 
         $User->education = $request->education; 
         $User->skills = $request->skills; 

@@ -22,6 +22,12 @@ class CreateUsersTable extends Migration
             $table->string('provider_id')->nullable();    
             $table->string('provider')->nullable();    
             $table->string('date_of_birth')->nullable();  
+            $table->string('gender')->nullable(); 
+            $table->string('marital_status')->nullable(); 
+            $table->string('race')->nullable(); 
+            $table->string('hobbies')->nullable(); 
+            $table->string('born_raised')->nullable(); 
+            $table->string('currently_living')->nullable(); 
             $table->string('designation')->nullable();
             $table->string('education')->nullable();
             $table->string('skills')->nullable();
